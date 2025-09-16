@@ -1,22 +1,4 @@
-% This script commits and pushes all changes to the desired branch in a GitHub repository.
 function gitcommit(message)
-% GitCommit - Commit and push all changes to the desired branch of a
-%             GitHub repository with a single command.
-% 
-% Usage:
-%   gitcommit('Your commit message')
-% 
-% This function:
-%   1. Self-updates from GitHub (if cloned from the official repo).
-%   2. Checks if Git is installed and configured.
-%   3. Pulls recent changes, stages all files, commits, and pushes.
-%   4. Lets you choose which branch to push to, or create a new one.
-% 
-% Requirements:
-%   - Git must be installed and available in your system PATH.
-%   - The current folder must be a valid Git repository.
-%   - You must have configured your Git user.email and remote origin.
-
     %---------------------------%
     %  Auto-update GitCommit.m  %
     %---------------------------%
@@ -46,7 +28,7 @@ function gitcommit(message)
             disp('All Git checks passed.')
         end
     end
-%=========================================================================%
+    
     %---------------------------%
     %  CHECK FOR REMOTE CHANGES %
     %---------------------------%
@@ -74,7 +56,9 @@ function gitcommit(message)
         end
     end
     
-    % Check for .gitignore
+    %---------------------------%
+    %  CHECK FOR GITIGNORE FILE %
+    %---------------------------%
     if ~exist('.gitignore', 'file')
         % Case 1: No .gitignore
         createIgnore = input('No .gitignore detected. Do you want to create one? [Y]es/[N]o: ', 's');
