@@ -1,64 +1,31 @@
-# GitCommit Version 2
+% GitCommit Toolbox
 
-%% GitCommit Toolbox
+Commit and push changes to GitHub from MATLAB with one line. This toolbox
+can be found in MATLAB's Add-Ons.
 
-% Commit and push changes to GitHub from MATLAB with one line.
+Usage:
 
-%
+  GitCommit('Your commit message')
 
-% Usage:
+This will:
+1. Check Git and the configuration
+2. Check if there are any remote changes
+3. Check if a .gitignore needs to be created or if any changes need to be made
+4. Stage and commit all changes with single message
+5. Push all changes to desired branch on the remote repository
 
-%   GitCommit("Your commit message")
+Installation:
+This function has already been packaged on MATLAB's Add-ons section
+1. Home -> Environment -> Add-Ons
+2. Select "Get Add-Ons" and search "gitcommit"
+3. Add the toolbox
 
-%
+Once installed, the function can be called in the Command Window. Make sure you 
+are in the local working folder that is associated with the remote repository. 
 
-% Example:
+Requirements:
+-Git installed and available in your system PATH
+-Current folder must be a valid Git repository
+-Git user configuration (name/email) set up
 
-%   GitCommit("Fixed bug in data processing script")
-
-%
-
-% This will:
-
-%   1. Update GitCommit.m from GitHub (if cloned from repo).
-
-%   2. Pull the latest changes from the remote repository.
-
-%   3. Stage all modified files.
-
-%   4. Commit with the provided message.
-
-%   5. Ask you which branch to push to (or let you create a new one).
-
-%
-
-%% Requirements
-
-% \* Git installed and available in your system PATH.
-
-% \* Current folder must be a valid Git repository.
-
-% \* Git user configuration (name/email) set up.
-
-%
-
-%% Installation
-
-% 1. Clone the repo or download the GitCommit.m file.
-
-% 2. Package into a MATLAB toolbox (.mltbx):
-
-%    - MATLAB Home tab → Add-Ons → Package Toolbox.
-
-%    - Select the GitCommit folder and follow the wizard.
-
-% 3. Install the toolbox by double-clicking the .mltbx file.
-
-%
-
-%% Notes
-
-% \* The function auto-updates itself from GitHub if installed via git clone.
-
-% \* You can use it in any MATLAB project linked to a Git repository.
-
+If these requirements are not fulfilled, see GitMatlab for easy installation. 
