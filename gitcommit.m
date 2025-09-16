@@ -73,7 +73,53 @@ function gitcommit(message)
             disp('Local repository is up-to-date with remote.');
         end
     end
-
+    
+    % Check for .gitignore
+    if ~exist('.gitignore', 'file')
+        % Case 1: No .gitignore
+        createIgnore = input('No .gitignore detected. Do you want to create one? [Y]es/[N]o: ', 's');
+        if strcmpi(createIgnore, 'Y')
+            disp('Enter files/folders to ignore, separated by commas.');
+            disp('Examples:  *.pdf, /data/, secrets.txt');
+            ignoreFiles = input('> ', 's');
+            
+            ignoreList = strtrim(strsplit(ignoreFiles, ',')); % split + trim
+            
+            fid = fopen('.gitignore', 'w');
+            if fid ~= -1
+                for k = 1:numel(ignoreList)
+                    fprintf(fid, '%s\n', ignoreList{k});
+                end
+                fclose(fid);
+                disp('.gitignore created.');
+                system('git add .gitignore'); % stage it immediately
+            else
+                warning('Could not create .gitignore file.');
+            end
+        end
+    else
+        % Case 2: Existing .gitignore
+        updateIgnore = input('.gitignore detected. Do you want to add entries? [Y]es/[N]o: ', 's');
+        if strcmpi(updateIgnore, 'Y')
+            disp('Enter additional files/folders to ignore, separated by commas.');
+            ignoreFiles = input('> ', 's');
+            
+            ignoreList = strtrim(strsplit(ignoreFiles, ',')); % split + trim
+            
+            fid = fopen('.gitignore', 'a'); % append mode
+            if fid ~= -1
+                for k = 1:numel(ignoreList)
+                    fprintf(fid, '%s\n', ignoreList{k});
+                end
+                fclose(fid);
+                disp('Entries added to .gitignore.');
+                system('git add .gitignore'); % stage updated ignore file
+            else
+                warning('Could not update .gitignore file.');
+            end
+        end
+    end
+    
     %---------------------------%
     %      COMMIT & ADD         %
     %---------------------------%
@@ -120,23 +166,7 @@ function gitcommit(message)
             end
             
             system(['git checkout ', branchName]);                         % Switch to the selected branch
-            
-            % Check for .gitignore
-            if ~exist('.gitignore', 'file')
-                createIgnore = input('No .gitignore detected. Do you want to create one? [Y]es/[N]o: ', 's');
-                if strcmpi(createIgnore, 'Y')
-                    ignoreFiles = input('Enter files to ignore (e.g., *.pdf, folder/): ', 's');
-                    fid = fopen('.gitignore', 'w');
-                    if fid == -1
-                        warning('Could not create .gitignore file.');
-                    else
-                        fprintf(fid, '%s\n', ignoreFiles);
-                        fclose(fid);
-                        disp('.gitignore created.');
-                    end
-                end
-            end
-            
+                   
             
             [status, output] = system(['git push -u origin ', branchName]);% Push changes to the selected branch on the remote repository
             

@@ -74,6 +74,21 @@ function gitcommit(message)
         end
     end
 
+                % Check for .gitignore
+            if ~exist('.gitignore', 'file')
+                createIgnore = input('No .gitignore detected. Do you want to create one? [Y]es/[N]o: ', 's');
+                if strcmpi(createIgnore, 'Y')
+                    ignoreFiles = input('Enter files to ignore (e.g., *.pdf, folder/): ', 's');
+                    fid = fopen('.gitignore', 'w');
+                    if fid == -1
+                        warning('Could not create .gitignore file.');
+                    else
+                        fprintf(fid, '%s\n', ignoreFiles);
+                        fclose(fid);
+                        disp('.gitignore created.');
+                    end
+                end
+            end
     %---------------------------%
     %      COMMIT & ADD         %
     %---------------------------%
@@ -119,18 +134,13 @@ function gitcommit(message)
                 branchName = branchName(2:end);
             end
             
-            system(['git checkout ', branchName]);                         % Switch to the selected branch 
-            
-            % Any files to ignore?
-            createIgnore = input('No .gitignore detected. Do you want to create one? [Y]es or [N]o', 's');
-            if createIgnore = 'Y'
-                ignoreFiles = input('Enter files to ignore: (/
-            
+            system(['git checkout ', branchName]);                         % Switch to the selected branch
+                   
             
             [status, output] = system(['git push -u origin ', branchName]);% Push changes to the selected branch on the remote repository
             
             if status ~= 0
-               disp(output);                                               %Changes were not successfully
+                disp(output);                                               %Changes were not successfully
             else
                 disp(['Changes pushed to branch ', branchName]);           %Changes were successfully pushed
             end
