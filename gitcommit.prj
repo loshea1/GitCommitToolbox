@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.toolbox" plugin-version="1.0">
-  <configuration file="C:\Users\loshea\MATLAB\GitCommit\gitcommit.prj" location="C:\Users\loshea\MATLAB\GitCommit" name="gitcommit" target="target.toolbox" target-name="Package Toolbox">
+  <configuration file="\\fs2.smpp.local\smulab2\Leah Summer 2021\Github\GitCommit\gitcommit.prj" location="\\fs2.smpp.local\smulab2\Leah Summer 2021\Github\GitCommit" name="gitcommit" target="target.toolbox" target-name="Package Toolbox">
     <param.appname>gitcommit</param.appname>
     <param.authnamewatermark>Leah O'Shea</param.authnamewatermark>
     <param.email>loshea@ric.org</param.email>
@@ -7,14 +7,35 @@
     <param.summary />
     <param.description />
     <param.screenshot>${PROJECT_ROOT}\GitCommit.png</param.screenshot>
-    <param.version>1.2</param.version>
+    <param.version>1.0</param.version>
     <param.output>${PROJECT_ROOT}\gitcommit.mltbx</param.output>
     <param.products.name />
     <param.products.id />
     <param.products.version />
     <param.platforms />
-    <param.guid>99e16c66-5795-472d-95a8-293055229b62</param.guid>
-    <param.exclude.filters />
+    <param.guid>f9577584-2122-48c7-8f39-0ccafa8846f1</param.guid>
+    <param.exclude.filters>% List files contained in your toolbox folder that you would like to exclude
+% from packaging.  Excludes should be listed relative to the toolbox folder.
+% Some examples of how to specify excludes are provided below:
+%
+% A single file in the toolbox folder:
+% .svn
+%
+% A single file in a subfolder of the toolbox folder:
+% example/.svn
+%
+% All files in a subfolder of the toolbox folder:
+% example/*
+%
+% All files of a certain name in all subfolders of the toolbox folder:
+% **/.svn
+%
+% All files matching a pattern in all subfolders of the toolbox folder:
+% **/*.bak
+
+GitCommitv.1/
+Thumbs.db
+%</param.exclude.filters>
     <param.exclude.pcodedmfiles>true</param.exclude.pcodedmfiles>
     <param.examples />
     <param.demosxml />
@@ -47,12 +68,12 @@
       <param.company />
       <param.summary />
       <param.description />
+      <param.version />
       <param.output />
       <param.products.name />
       <param.products.id />
       <param.products.version />
       <param.platforms />
-      <param.exclude.filters />
       <param.exclude.pcodedmfiles />
       <param.examples />
       <param.demosxml />
@@ -84,6 +105,9 @@
       <file>${PROJECT_ROOT}</file>
     </fileset.rootdir>
     <fileset.rootfiles>
+      <file>${PROJECT_ROOT}\.git</file>
+      <file>${PROJECT_ROOT}\.gitattributes</file>
+      <file>${PROJECT_ROOT}\.gitignore</file>
       <file>${PROJECT_ROOT}\gitcommit.m</file>
       <file>${PROJECT_ROOT}\GitCommit.png</file>
       <file>${PROJECT_ROOT}\README.md</file>
@@ -92,7 +116,7 @@
     <fileset.depfun.excluded />
     <fileset.package />
     <build-deliverables>
-      <file location="${PROJECT_ROOT}" name="gitcommit.mltbx" optional="false">C:\Users\loshea\MATLAB\GitCommit\gitcommit.mltbx</file>
+      <file location="${PROJECT_ROOT}" name="gitcommit.mltbx" optional="false">\\fs2.smpp.local\smulab2\Leah Summer 2021\Github\GitCommit\gitcommit.mltbx</file>
     </build-deliverables>
     <workflow />
     <matlab>
