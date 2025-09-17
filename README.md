@@ -10,7 +10,7 @@ Usage:
 This will:
 1. Check Git and the configuration
 2. Check if there are any remote changes
-3. Check if a .gitignore needs to be created or if any changes need to be made
+3. Check if a .gitignore needs to be created
 4. Stage and commit all changes with single message
 5. Push all changes to desired branch on the remote repository
 
@@ -28,4 +28,4 @@ Requirements:
 -Current folder must be a valid Git repository
 -Git user configuration (name/email) set up
 
-If these requirements are not fulfilled, see GitMatlab for easy installation. 
+If these requirements are not fulfilled, see GitMatlab for easy installation of requirements. 
