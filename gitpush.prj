@@ -1,19 +1,19 @@
 <deployment-project plugin="plugin.toolbox" plugin-version="1.0">
-  <configuration file="\\fs2.smpp.local\smulab2\Leah Summer 2021\Github\GitCommit\gitcommit.prj" location="\\fs2.smpp.local\smulab2\Leah Summer 2021\Github\GitCommit" name="gitcommit" target="target.toolbox" target-name="Package Toolbox">
-    <param.appname>gitcommit</param.appname>
+  <configuration file="\\fs2.smpp.local\smulab2\Leah Summer 2021\Github\GitPush\gitpush.prj" location="\\fs2.smpp.local\smulab2\Leah Summer 2021\Github\GitPush" name="gitpush" target="target.toolbox" target-name="Package Toolbox">
+    <param.appname>GitPush</param.appname>
     <param.authnamewatermark>Leah O'Shea</param.authnamewatermark>
     <param.email>loshea@ric.org</param.email>
     <param.company>Shirley Ryan AbilityLab</param.company>
     <param.summary />
-    <param.description />
-    <param.screenshot>${PROJECT_ROOT}\GitCommit.png</param.screenshot>
-    <param.version>1.0</param.version>
-    <param.output>${PROJECT_ROOT}\gitcommit.mltbx</param.output>
+    <param.description>Commit changes to local repo and push changes to GitHub repo from MATLAB with one line</param.description>
+    <param.screenshot>${PROJECT_ROOT}\GitPushPic.png</param.screenshot>
+    <param.version>1.0.1</param.version>
+    <param.output>${PROJECT_ROOT}\GitPush.mltbx</param.output>
     <param.products.name />
     <param.products.id />
     <param.products.version />
     <param.platforms />
-    <param.guid>f9577584-2122-48c7-8f39-0ccafa8846f1</param.guid>
+    <param.guid>2376fbbc-b484-4899-923c-a0761e43c786</param.guid>
     <param.exclude.filters>% List files contained in your toolbox folder that you would like to exclude
 % from packaging.  Excludes should be listed relative to the toolbox folder.
 % Some examples of how to specify excludes are provided below:
@@ -32,10 +32,9 @@
 %
 % All files matching a pattern in all subfolders of the toolbox folder:
 % **/*.bak
-
-GitCommitv.1/
+%
 Thumbs.db
-%</param.exclude.filters>
+GitCommitv.1/</param.exclude.filters>
     <param.exclude.pcodedmfiles>true</param.exclude.pcodedmfiles>
     <param.examples />
     <param.demosxml />
@@ -67,8 +66,6 @@ Thumbs.db
       <param.email />
       <param.company />
       <param.summary />
-      <param.description />
-      <param.version />
       <param.output />
       <param.products.name />
       <param.products.id />
@@ -108,15 +105,15 @@ Thumbs.db
       <file>${PROJECT_ROOT}\.git</file>
       <file>${PROJECT_ROOT}\.gitattributes</file>
       <file>${PROJECT_ROOT}\.gitignore</file>
-      <file>${PROJECT_ROOT}\gitcommit.m</file>
-      <file>${PROJECT_ROOT}\GitCommit.png</file>
+      <file>${PROJECT_ROOT}\gitpush.m</file>
+      <file>${PROJECT_ROOT}\GitPushPic.png</file>
       <file>${PROJECT_ROOT}\README.md</file>
     </fileset.rootfiles>
     <fileset.depfun.included />
     <fileset.depfun.excluded />
     <fileset.package />
     <build-deliverables>
-      <file location="${PROJECT_ROOT}" name="gitcommit.mltbx" optional="false">\\fs2.smpp.local\smulab2\Leah Summer 2021\Github\GitCommit\gitcommit.mltbx</file>
+      <file location="${PROJECT_ROOT}" name="GitPush.mltbx" optional="false">\\fs2.smpp.local\smulab2\Leah Summer 2021\Github\GitPush\GitPush.mltbx</file>
     </build-deliverables>
     <workflow />
     <matlab>

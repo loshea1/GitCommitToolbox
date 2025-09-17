@@ -1,6 +1,6 @@
-function gitcommit(message)
+function gitpush(message)
     %---------------------------%
-    %  Auto-update GitCommit.m  %
+    %  Auto-update GitPush.m  %
     %---------------------------%
 %     gitPath = fileparts(mfilename('fullpath'));                            % folder containing this file
 %     oldDir = pwd;                                                          % save current working directory

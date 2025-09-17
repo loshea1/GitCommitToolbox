@@ -1,11 +1,11 @@
-% GitCommit Toolbox
+% GitPush Toolbox
 
-Commit and push changes to GitHub from MATLAB with one line. This toolbox
-can be found in MATLAB's Add-Ons.
+Commit changes to local repo and push changes to GitHub repo from MATLAB 
+with one line. This toolbox can be found in MATLAB's Add-Ons.
 
 Usage:
 
-  GitCommit('Your commit message')
+  gitpush('Your commit message')
 
 This will:
 1. Check Git and the configuration
@@ -17,7 +17,7 @@ This will:
 Installation:
 This function has already been packaged on MATLAB's Add-ons section
 1. Home -> Environment -> Add-Ons
-2. Select "Get Add-Ons" and search "gitcommit"
+2. Select "Get Add-Ons" and search "gitpush"
 3. Add the toolbox
 
 Once installed, the function can be called in the Command Window. Make sure you 
