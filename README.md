@@ -5,14 +5,17 @@ can be found in MATLAB's Add-Ons.
 
 Usage:
 
-  GitCommit('Your commit message')
+  gitcommit('Your commit message')
 
 This will:
 1. Check Git and the configuration
-2. Check if there are any remote changes
+2. Check if there are any remote changes and pull if necessary
 3. Check if a .gitignore needs to be created
-4. Stage and commit all changes with single message
+4. Stage and commit all changes with the commit message
 5. Push all changes to desired branch on the remote repository
+   a. You can create a new branch
+   b. Switch to a different branch or stay on the current branch
+   c. Exit the command
 
 Installation:
 This function has already been packaged on MATLAB's Add-ons section
