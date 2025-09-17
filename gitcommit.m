@@ -81,27 +81,27 @@ function gitcommit(message)
                 warning('Could not create .gitignore file.');
             end
         end
-    else
-        % Case 2: Existing .gitignore
-        updateIgnore = input('.gitignore detected. Do you want to add entries? [Y]es/[N]o: ', 's');
-        if strcmpi(updateIgnore, 'Y')
-            disp('Enter additional files/folders to ignore, separated by commas.');
-            ignoreFiles = input('> ', 's');
-            
-            ignoreList = strtrim(strsplit(ignoreFiles, ',')); % split + trim
-            
-            fid = fopen('.gitignore', 'a'); % append mode
-            if fid ~= -1
-                for k = 1:numel(ignoreList)
-                    fprintf(fid, '%s\n', ignoreList{k});
-                end
-                fclose(fid);
-                disp('Entries added to .gitignore.');
-                system('git add .gitignore'); % stage updated ignore file
-            else
-                warning('Could not update .gitignore file.');
-            end
-        end
+%     else
+%         % Case 2: Existing .gitignore
+%         updateIgnore = input('.gitignore detected. Do you want to add entries? [Y]es/[N]o: ', 's');
+%         if strcmpi(updateIgnore, 'Y')
+%             disp('Enter additional files/folders to ignore, separated by commas.');
+%             ignoreFiles = input('> ', 's');
+%             
+%             ignoreList = strtrim(strsplit(ignoreFiles, ',')); % split + trim
+%             
+%             fid = fopen('.gitignore', 'a'); % append mode
+%             if fid ~= -1
+%                 for k = 1:numel(ignoreList)
+%                     fprintf(fid, '%s\n', ignoreList{k});
+%                 end
+%                 fclose(fid);
+%                 disp('Entries added to .gitignore.');
+%                 system('git add .gitignore'); % stage updated ignore file
+%             else
+%                 warning('Could not update .gitignore file.');
+%             end
+%         end
     end
     
     %---------------------------%
