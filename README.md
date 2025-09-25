@@ -31,3 +31,9 @@ Requirements:
 -Git user configuration (name/email) set up
 
 If these requirements are not fulfilled, see GitMatlab for easy installation of requirements. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Troubleshooting
+
+If you get the error "COMMAND must be a text scalar", rerun the command with the commit
+message in SINGLE qoutes.
